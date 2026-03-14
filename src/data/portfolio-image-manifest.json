@@ -1,0 +1,73 @@
+{
+  "projects": [
+    {
+      "title": "Modern Loft Renovation",
+      "slug": "loft-renovation",
+      "label": "Modern Loft",
+      "category": "Residential",
+      "accent": "#2563EB",
+      "accentSoft": "#DBEAFE",
+      "surface": "#EFF6FF",
+      "year": 2024
+    },
+    {
+      "title": "Victorian Home Restoration",
+      "slug": "victorian-restoration",
+      "label": "Victorian Home",
+      "category": "Residential",
+      "accent": "#7C3AED",
+      "accentSoft": "#E9D5FF",
+      "surface": "#FAF5FF",
+      "year": 2024
+    },
+    {
+      "title": "Commercial Office Space",
+      "slug": "office-makeover",
+      "label": "Office Space",
+      "category": "Commercial",
+      "accent": "#0EA5E9",
+      "accentSoft": "#BAE6FD",
+      "surface": "#F0F9FF",
+      "year": 2024
+    },
+    {
+      "title": "Suburban Family Home",
+      "slug": "suburban-home",
+      "label": "Family Home",
+      "category": "Residential",
+      "accent": "#22C55E",
+      "accentSoft": "#DCFCE7",
+      "surface": "#F7FEE7",
+      "year": 2023
+    },
+    {
+      "title": "Deck Restoration Project",
+      "slug": "deck-restoration",
+      "label": "Deck Restoration",
+      "category": "Outdoor",
+      "accent": "#B45309",
+      "accentSoft": "#FDE68A",
+      "surface": "#FFFBEB",
+      "year": 2023
+    },
+    {
+      "title": "Retail Store Makeover",
+      "slug": "retail-makeover",
+      "label": "Retail Store",
+      "category": "Commercial",
+      "accent": "#DB2777",
+      "accentSoft": "#FBCFE8",
+      "surface": "#FDF2F8",
+      "year": 2023
+    }
+  ],
+  "placeholder": {
+    "slug": "new-project",
+    "label": "New Project",
+    "category": "Portfolio",
+    "accent": "#1D4ED8",
+    "accentSoft": "#DBEAFE",
+    "surface": "#F8FAFC",
+    "year": 2026
+  }
+}

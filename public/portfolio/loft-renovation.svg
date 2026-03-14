@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Modern Loft portfolio image</title>
+  <desc id="desc">Portfolio showcase artwork for Modern Loft</desc>
+  <defs>
+    <linearGradient id="bg" x1="140" y1="90" x2="1060" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="168" y1="168" x2="1032" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="1020" cy="140" r="130" fill="#DBEAFE" opacity="0.55"/>
+  <circle cx="190" cy="700" r="170" fill="#DBEAFE" opacity="0.38"/>
+
+  <rect x="104" y="96" width="992" height="608" rx="44" fill="url(#panel)" stroke="#E2E8F0" stroke-width="4"/>
+
+  <rect x="160" y="156" width="540" height="488" rx="30" fill="#EFF6FF"/>
+  <rect x="190" y="188" width="480" height="260" rx="22" fill="#FFFFFF"/>
+  <rect x="220" y="220" width="220" height="170" rx="14" fill="#DBEAFE"/>
+  <rect x="458" y="220" width="180" height="76" rx="12" fill="#F1F5F9"/>
+  <rect x="458" y="314" width="180" height="76" rx="12" fill="#E2E8F0"/>
+  <path d="M226 430c82-40 176-40 258 0" stroke="#2563EB" stroke-width="16" stroke-linecap="round"/>
+
+  <rect x="742" y="156" width="298" height="488" rx="30" fill="#EFF6FF"/>
+  <rect x="778" y="198" width="224" height="140" rx="22" fill="#DBEAFE"/>
+  <path d="M806 248h168" stroke="#2563EB" stroke-width="14" stroke-linecap="round"/>
+  <path d="M806 284h132" stroke="#2563EB" stroke-width="12" stroke-linecap="round" opacity="0.82"/>
+
+  <rect x="778" y="370" width="224" height="110" rx="16" fill="#FFFFFF"/>
+  <rect x="778" y="500" width="224" height="110" rx="16" fill="#FFFFFF"/>
+
+  <rect x="160" y="112" width="182" height="46" rx="23" fill="#DBEAFE"/>
+  <text x="194" y="143" fill="#2563EB" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">PORTFOLIO</text>
+
+  <text x="190" y="510" fill="#0F172A" font-size="58" font-family="Segoe UI, Arial, sans-serif" font-weight="800">Modern Loft</text>
+  <text x="190" y="560" fill="#475569" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="600">Residential Project</text>
+  <text x="190" y="604" fill="#64748B" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="600">Completed 2024</text>
+</svg>

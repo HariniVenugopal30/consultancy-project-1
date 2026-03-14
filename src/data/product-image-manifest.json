@@ -1,0 +1,157 @@
+{
+  "products": [
+    {
+      "name": "Premium Interior Matte",
+      "slug": "interior-matte",
+      "title": "Interior Matte",
+      "tagline": "Velvety wall coverage",
+      "accent": "#D7C8B6",
+      "accentSoft": "#F5EFE6",
+      "surface": "#FFF9F1",
+      "feature": "Living room finish",
+      "scene": "interior"
+    },
+    {
+      "name": "Gloss Exterior Pro",
+      "slug": "exterior-gloss",
+      "title": "Exterior Gloss",
+      "tagline": "Weatherproof high shine",
+      "accent": "#2563EB",
+      "accentSoft": "#DBEAFE",
+      "surface": "#EFF6FF",
+      "feature": "Facade protection",
+      "scene": "exterior"
+    },
+    {
+      "name": "Satin Semi-Gloss",
+      "slug": "satin",
+      "title": "Satin Semi-Gloss",
+      "tagline": "Kitchen-ready sheen",
+      "accent": "#F3C96A",
+      "accentSoft": "#FEF3C7",
+      "surface": "#FFFBEA",
+      "feature": "Easy-clean walls",
+      "scene": "interior"
+    },
+    {
+      "name": "Eco-Friendly Acrylic",
+      "slug": "eco-friendly",
+      "title": "Eco Acrylic",
+      "tagline": "Low-VOC comfort",
+      "accent": "#22C55E",
+      "accentSoft": "#DCFCE7",
+      "surface": "#F3FFF6",
+      "feature": "Healthy home coat",
+      "scene": "eco"
+    },
+    {
+      "name": "Deck & Patio Stain",
+      "slug": "deck-stain",
+      "title": "Deck & Patio",
+      "tagline": "Outdoor wood stain",
+      "accent": "#B45309",
+      "accentSoft": "#FDE68A",
+      "surface": "#FFF7E8",
+      "feature": "Timber protection",
+      "scene": "wood"
+    },
+    {
+      "name": "Cabinet & Trim Paint",
+      "slug": "cabinet",
+      "title": "Cabinet & Trim",
+      "tagline": "Hardwearing enamel",
+      "accent": "#0F172A",
+      "accentSoft": "#CBD5E1",
+      "surface": "#F8FAFC",
+      "feature": "Fine finish joinery",
+      "scene": "cabinet"
+    },
+    {
+      "name": "Ultra Washable Eggshell",
+      "slug": "eggshell",
+      "title": "Washable Eggshell",
+      "tagline": "Family-proof walls",
+      "accent": "#D6B98C",
+      "accentSoft": "#F5E7D0",
+      "surface": "#FFFCF6",
+      "feature": "Easy-clean coating",
+      "scene": "interior"
+    },
+    {
+      "name": "RainShield Exterior Shield",
+      "slug": "rainshield",
+      "title": "RainShield",
+      "tagline": "Monsoon-ready defence",
+      "accent": "#0EA5E9",
+      "accentSoft": "#BAE6FD",
+      "surface": "#F0F9FF",
+      "feature": "Exterior water barrier",
+      "scene": "shield"
+    },
+    {
+      "name": "Premium Wall Primer Pro",
+      "slug": "primer-pro",
+      "title": "Primer Pro",
+      "tagline": "Smooth basecoat prep",
+      "accent": "#94A3B8",
+      "accentSoft": "#E2E8F0",
+      "surface": "#F8FAFC",
+      "feature": "High-bond undercoat",
+      "scene": "primer"
+    },
+    {
+      "name": "Kitchen & Bath Anti-Mold",
+      "slug": "anti-mold",
+      "title": "Anti-Mold",
+      "tagline": "Steam-safe finish",
+      "accent": "#0F766E",
+      "accentSoft": "#CCFBF1",
+      "surface": "#F0FDFA",
+      "feature": "Bathroom moisture guard",
+      "scene": "bath"
+    },
+    {
+      "name": "Velvet Texture Designer Coat",
+      "slug": "velvet-texture",
+      "title": "Designer Velvet",
+      "tagline": "Accent wall texture",
+      "accent": "#7C3AED",
+      "accentSoft": "#E9D5FF",
+      "surface": "#FAF5FF",
+      "feature": "Premium statement finish",
+      "scene": "designer"
+    },
+    {
+      "name": "Heat Reflect Roof Coat",
+      "slug": "roof-coat",
+      "title": "Roof Coat",
+      "tagline": "Reflects harsh heat",
+      "accent": "#0284C7",
+      "accentSoft": "#CFFAFE",
+      "surface": "#F0F9FF",
+      "feature": "Cool-roof protection",
+      "scene": "roof"
+    },
+    {
+      "name": "Child-Safe Odorless Paint",
+      "slug": "odorless-kids",
+      "title": "Child-Safe",
+      "tagline": "Gentle nursery paint",
+      "accent": "#65A30D",
+      "accentSoft": "#DCFCE7",
+      "surface": "#F7FEE7",
+      "feature": "Odorless room refresh",
+      "scene": "child"
+    }
+  ],
+  "placeholder": {
+    "slug": "new-product",
+    "title": "New Paint Product",
+    "tagline": "Add a product image",
+    "accent": "#1D4ED8",
+    "accentSoft": "#DBEAFE",
+    "surface": "#F8FAFC",
+    "feature": "Paint shop catalog",
+    "scene": "generic"
+  }
+}
