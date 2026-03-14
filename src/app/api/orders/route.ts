@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
-import { connectToDatabase } from '@/lib/db';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { getAuthUser } from '@/lib/auth';
-import { Order } from '@/models/Order';
-import { Product } from '@/models/Product';
-import { ensureInventorySeeded } from '@/lib/inventory';
+import { connectToDatabase } from '@/backend/lib/db';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { getAuthUser } from '@/backend/lib/auth';
+import { Order } from '@/backend/models/Order';
+import { Product } from '@/backend/models/Product';
+import { ensureInventorySeeded } from '@/backend/lib/inventory';
 
 export async function POST(request: NextRequest) {
   try {
@@ -127,3 +127,4 @@ export async function POST(request: NextRequest) {
     return handleApiError(error);
   }
 }
+

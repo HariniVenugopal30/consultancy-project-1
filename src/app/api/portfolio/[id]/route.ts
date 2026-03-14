@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
 import {
   deleteFallbackPortfolioProject,
   updateFallbackPortfolioProject,
-} from '@/lib/fallback-portfolio-store';
+} from '@/backend/lib/fallback-portfolio-store';
 
 export async function PATCH(request: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
@@ -54,3 +54,4 @@ export async function DELETE(request: NextRequest, context: { params: Promise<{ 
     return handleApiError(error);
   }
 }
+

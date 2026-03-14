@@ -1,6 +1,6 @@
-import { ApiError } from '@/lib/api-error';
-import { products as seedProducts } from '@/data/products';
-import { Product, ProductDocument } from '@/models/Product';
+import { ApiError } from '@/backend/lib/api-error';
+import { products as seedProducts } from '@/shared/data/products';
+import { Product, ProductDocument } from '@/backend/models/Product';
 
 type ProductPayload = {
   name: unknown;
@@ -135,3 +135,4 @@ export async function ensureInventorySeeded() {
     }))
   );
 }
+

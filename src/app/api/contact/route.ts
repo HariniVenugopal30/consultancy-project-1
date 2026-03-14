@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/db';
-import { Contact } from '@/models/Contact';
-import { ApiError, handleApiError } from '@/lib/api-error';
+import { connectToDatabase } from '@/backend/lib/db';
+import { Contact } from '@/backend/models/Contact';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
 
 export async function POST(request: Request) {
   try {
@@ -43,3 +43,4 @@ export async function POST(request: Request) {
     return handleApiError(error);
   }
 }
+

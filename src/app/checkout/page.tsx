@@ -1,7 +1,7 @@
 'use client';
 
-import { useCart } from '@/context/CartContext';
-import { products as seedProducts } from '@/data/products';
+import { useCart } from '@/frontend/context/CartContext';
+import { products as seedProducts } from '@/shared/data/products';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -669,3 +669,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+

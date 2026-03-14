@@ -2,7 +2,7 @@
 
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/frontend/components/ContactForm';
 
 export default function ContactPage() {
   const infoItems = [
@@ -128,3 +128,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

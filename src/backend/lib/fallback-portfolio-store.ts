@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { portfolioProjects as seedProjects } from '@/data/portfolio';
+import { portfolioProjects as seedProjects } from '@/shared/data/portfolio';
 
 type PortfolioProjectRecord = {
   id: string;
@@ -180,3 +180,4 @@ export function deleteFallbackPortfolioProject(id: string) {
   writeState(state);
   return true;
 }
+

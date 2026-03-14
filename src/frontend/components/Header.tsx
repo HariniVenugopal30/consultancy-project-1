@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/frontend/context/CartContext';
 
 const prefetchRoutes = [
   '/',
@@ -189,3 +189,4 @@ export default function Header() {
     </header>
   );
 }
+

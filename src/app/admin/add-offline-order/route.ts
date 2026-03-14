@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
-import { connectToDatabase } from '@/lib/db';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
-import { Order } from '@/models/Order';
-import { User } from '@/models/User';
-import { Product } from '@/models/Product';
+import { connectToDatabase } from '@/backend/lib/db';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
+import { Order } from '@/backend/models/Order';
+import { User } from '@/backend/models/User';
+import { Product } from '@/backend/models/Product';
 
 type SelectedUser = {
   _id: mongoose.Types.ObjectId;
@@ -151,3 +151,4 @@ export async function POST(request: NextRequest) {
     return handleApiError(error);
   }
 }
+

@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/db';
-import { User } from '@/models/User';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { signToken } from '@/lib/auth';
-import { consumeRateLimit, getClientIp } from '@/lib/rate-limit';
+import { connectToDatabase } from '@/backend/lib/db';
+import { User } from '@/backend/models/User';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { signToken } from '@/backend/lib/auth';
+import { consumeRateLimit, getClientIp } from '@/backend/lib/rate-limit';
 
 export async function POST(request: Request) {
   try {
@@ -70,3 +70,4 @@ export async function POST(request: Request) {
     return handleApiError(error);
   }
 }
+

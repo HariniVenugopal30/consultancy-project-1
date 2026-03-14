@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { portfolioProjects as seedPortfolioProjects } from '@/data/portfolio';
+import { portfolioProjects as seedPortfolioProjects } from '@/shared/data/portfolio';
 
 type PortfolioProject = {
   id: string;
@@ -211,3 +211,4 @@ export default function PortfolioPage() {
     </div>
   );
 }
+

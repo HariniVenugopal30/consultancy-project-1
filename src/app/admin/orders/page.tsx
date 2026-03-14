@@ -1,6 +1,6 @@
 'use client';
 
-import AdminOrdersPanel from '@/components/admin/AdminOrdersPanel';
+import AdminOrdersPanel from '@/frontend/components/admin/AdminOrdersPanel';
 
 export default function AdminOrdersPage() {
   return (
@@ -11,3 +11,4 @@ export default function AdminOrdersPage() {
     </div>
   );
 }
+

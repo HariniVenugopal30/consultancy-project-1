@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/db';
-import { Product } from '@/models/Product';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
-import { ensureInventorySeeded, parseProductPayload, serializeProduct } from '@/lib/inventory';
+import { connectToDatabase } from '@/backend/lib/db';
+import { Product } from '@/backend/models/Product';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
+import { ensureInventorySeeded, parseProductPayload, serializeProduct } from '@/backend/lib/inventory';
 
 export async function GET() {
   try {
@@ -34,3 +34,4 @@ export async function POST(request: NextRequest) {
     return handleApiError(error);
   }
 }
+

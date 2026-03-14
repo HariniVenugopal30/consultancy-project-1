@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ShoppingCart, Star, Zap, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 import { useEffect, useState, memo } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/frontend/context/CartContext';
 
 interface ProductCardProps {
   id: string;
@@ -239,3 +239,4 @@ function AnimatedProductCard({
 }
 
 export default memo(AnimatedProductCard);
+

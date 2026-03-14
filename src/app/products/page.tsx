@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import AnimatedProductCard from '@/components/AnimatedProductCard';
-import { products as seedProducts } from '@/data/products';
+import AnimatedProductCard from '@/frontend/components/AnimatedProductCard';
+import { products as seedProducts } from '@/shared/data/products';
 
 type Product = {
   id: string;
@@ -311,3 +311,4 @@ export default function ProductsPage() {
     </div>
   );
 }
+

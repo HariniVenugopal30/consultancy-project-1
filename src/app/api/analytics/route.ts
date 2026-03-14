@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/db';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
-import { Order } from '@/models/Order';
-import { Product } from '@/models/Product';
-import { User } from '@/models/User';
+import { connectToDatabase } from '@/backend/lib/db';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
+import { Order } from '@/backend/models/Order';
+import { Product } from '@/backend/models/Product';
+import { User } from '@/backend/models/User';
 
 export async function GET(request: NextRequest) {
   try {
@@ -44,3 +44,4 @@ export async function GET(request: NextRequest) {
     return handleApiError(error);
   }
 }
+

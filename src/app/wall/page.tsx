@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Droplet, Palette } from 'lucide-react';
-import { estimateDrops, hexToRgb } from '@/lib/color';
+import { estimateDrops, hexToRgb } from '@/frontend/lib/color';
 
 const DEFAULT_BASE = '#FFFFFF';
 const DEFAULT_TARGET = '#FF3B3B';
@@ -339,3 +339,4 @@ function shade(hex: string, percent: number) {
   const toHex = (value: number) => value.toString(16).padStart(2, '0');
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
+

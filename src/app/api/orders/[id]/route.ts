@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
-import { connectToDatabase } from '@/lib/db';
-import { ApiError, handleApiError } from '@/lib/api-error';
-import { Order, OrderDocument } from '@/models/Order';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
-import { Product } from '@/models/Product';
+import { connectToDatabase } from '@/backend/lib/db';
+import { ApiError, handleApiError } from '@/backend/lib/api-error';
+import { Order, OrderDocument } from '@/backend/models/Order';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
+import { Product } from '@/backend/models/Product';
 
 const editableStatuses = ['processing', 'completed', 'shipped', 'delivered', 'cancelled'] as const;
 
@@ -304,3 +304,4 @@ export async function DELETE(
     return handleApiError(error);
   }
 }
+

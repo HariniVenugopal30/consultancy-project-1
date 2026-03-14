@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowRightLeft, Droplet, Palette, Play, Pause } from 'lucide-react';
-import { estimateDrops, hexToRgb, rgbToHex } from '@/lib/color';
+import { estimateDrops, hexToRgb, rgbToHex } from '@/frontend/lib/color';
 
 const DEFAULT_BASE = '#FFFFFF';
 const DEFAULT_TARGET = '#FF3B3B';
@@ -551,3 +551,4 @@ export default function PaintCalculatorPage() {
     </div>
   );
 }
+

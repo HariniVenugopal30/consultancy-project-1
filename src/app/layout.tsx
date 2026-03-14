@@ -1,6 +1,6 @@
 import "./globals.css";
-import ConditionalLayout from "@/components/ConditionalLayout";
-import { CartProvider } from "@/context/CartContext";
+import ConditionalLayout from "@/frontend/components/ConditionalLayout";
+import { CartProvider } from "@/frontend/context/CartContext";
 
 export default function RootLayout({
   children,
@@ -19,3 +19,4 @@ export default function RootLayout({
     </html>
   );
 }
+

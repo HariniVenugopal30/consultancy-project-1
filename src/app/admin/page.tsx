@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AdminOrdersPanel from '@/components/admin/AdminOrdersPanel';
+import AdminOrdersPanel from '@/frontend/components/admin/AdminOrdersPanel';
 
 type Product = {
   id: string;
@@ -481,3 +481,4 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
+

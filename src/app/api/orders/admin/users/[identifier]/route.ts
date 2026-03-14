@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
-import { connectToDatabase } from '@/lib/db';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
-import { handleApiError } from '@/lib/api-error';
-import { Order } from '@/models/Order';
+import { connectToDatabase } from '@/backend/lib/db';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
+import { handleApiError } from '@/backend/lib/api-error';
+import { Order } from '@/backend/models/Order';
 
 type LeanOrder = {
   _id: { toString(): string } | string;
@@ -96,3 +96,4 @@ export async function GET(
     return handleApiError(error);
   }
 }
+

@@ -3,7 +3,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Droplet, Palette } from 'lucide-react';
-import { estimateDrops, hexToRgb } from '@/lib/color';
+import { estimateDrops, hexToRgb } from '@/frontend/lib/color';
 
 const DEFAULT_BASE = '#FFFFFF';
 const DEFAULT_TARGET = '#FF3B3B';
@@ -309,3 +309,4 @@ export default function AdminPaintMixerPage() {
     </div>
   );
 }
+

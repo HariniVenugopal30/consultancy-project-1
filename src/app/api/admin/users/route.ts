@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/db';
-import { getAuthUser, requireAdmin } from '@/lib/auth';
-import { handleApiError } from '@/lib/api-error';
-import { User } from '@/models/User';
+import { connectToDatabase } from '@/backend/lib/db';
+import { getAuthUser, requireAdmin } from '@/backend/lib/auth';
+import { handleApiError } from '@/backend/lib/api-error';
+import { User } from '@/backend/models/User';
 
 export async function GET(request: NextRequest) {
   try {
@@ -27,3 +27,4 @@ export async function GET(request: NextRequest) {
     return handleApiError(error);
   }
 }
+

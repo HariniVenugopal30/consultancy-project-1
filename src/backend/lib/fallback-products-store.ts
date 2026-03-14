@@ -1,4 +1,4 @@
-import { products as seedProducts } from '@/data/products';
+import { products as seedProducts } from '@/shared/data/products';
 import fs from 'fs';
 import path from 'path';
 
@@ -227,3 +227,4 @@ export function processFallbackOrder(items: FallbackOrderItem[]) {
   writeState(state);
   return totalAmount;
 }
+

@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import Hero from '@/components/Hero';
+import Hero from '@/frontend/components/Hero';
 
-const Features = dynamic(() => import('@/components/Features'), { loading: () => null });
-const Testimonials = dynamic(() => import('@/components/Testimonials'), { loading: () => null });
-const FAQ = dynamic(() => import('@/components/FAQ'), { loading: () => null });
+const Features = dynamic(() => import('@/frontend/components/Features'), { loading: () => null });
+const Testimonials = dynamic(() => import('@/frontend/components/Testimonials'), { loading: () => null });
+const FAQ = dynamic(() => import('@/frontend/components/FAQ'), { loading: () => null });
 
 export default function Home() {
   const buttonVariants = {
@@ -156,3 +156,4 @@ export default function Home() {
     </div>
   );
 }
+
