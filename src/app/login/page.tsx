@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { FormEvent, Suspense, useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { getApiUrl } from '@/frontend/lib/api';
 
@@ -32,7 +32,6 @@ export default function LoginPage() {
 
 function LoginContent() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -40,6 +39,7 @@ function LoginContent() {
   const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
     const registered = searchParams.get('registered');
     const registeredEmail = searchParams.get('email');
 
@@ -50,7 +50,7 @@ function LoginContent() {
     if (registered === '1') {
       setSuccessMessage('Account created. Log in with your new customer credentials.');
     }
-  }, [searchParams]);
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
