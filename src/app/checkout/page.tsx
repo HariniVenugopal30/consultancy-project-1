@@ -19,6 +19,7 @@ import {
   Truck,
 } from 'lucide-react';
 import { useState } from 'react';
+import { getApiUrl } from '@/frontend/lib/api';
 
 const currencyFormatter = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -220,7 +221,7 @@ export default function CheckoutPage() {
     try {
       const token = typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
 
-      const response = await fetch('/api/checkout', {
+      const response = await fetch(getApiUrl('/api/checkout'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

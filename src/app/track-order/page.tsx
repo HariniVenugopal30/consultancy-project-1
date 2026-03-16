@@ -14,6 +14,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { Suspense, useEffect, useState } from 'react';
+import { getApiUrl } from '@/frontend/lib/api';
 
 const currencyFormatter = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -84,7 +85,7 @@ function TrackOrderContent() {
     setOrderData(null);
 
     try {
-      const response = await fetch(`/api/orders/${encodeURIComponent(cleanId)}`);
+      const response = await fetch(getApiUrl(`/api/orders/${encodeURIComponent(cleanId)}`));
       const data = await response.json();
 
       if (!response.ok) {

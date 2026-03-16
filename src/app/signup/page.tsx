@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type SignupResponse = {
   token: string;
@@ -29,7 +30,7 @@ export default function SignupPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(getApiUrl('/api/auth/register'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),
@@ -42,9 +43,8 @@ export default function SignupPage() {
       }
 
       const auth = data as SignupResponse;
-      localStorage.setItem('authToken', auth.token);
-      localStorage.setItem('authUser', JSON.stringify(auth.user));
-      router.push('/');
+      const emailParam = encodeURIComponent(auth.user.email);
+      router.push(`/login?registered=1&email=${emailParam}`);
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : 'Unable to sign up');
     } finally {

@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Send } from 'lucide-react';
+import { getApiUrl } from '@/frontend/lib/api';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -39,7 +40,7 @@ export default function ContactForm() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(getApiUrl('/api/contact'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

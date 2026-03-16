@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type OrderHistoryItem = {
   id: string;
@@ -41,7 +42,7 @@ export default function OrdersPage() {
           return;
         }
 
-        const response = await fetch('/api/orders/my', {
+        const response = await fetch(getApiUrl('/api/orders/my'), {
           cache: 'no-store',
           headers: {
             Authorization: `Bearer ${token}`,

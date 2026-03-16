@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type Product = {
   id: string;
@@ -88,7 +89,7 @@ export default function AdminProductsPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/products', { cache: 'no-store' });
+      const response = await fetch(getApiUrl('/api/products'), { cache: 'no-store' });
       const data = await response.json();
 
       if (!response.ok) {
@@ -159,7 +160,7 @@ export default function AdminProductsPage() {
       const endpoint = isEditing ? `/api/products/${editingProductId}` : '/api/products';
       const method = isEditing ? 'PATCH' : 'POST';
 
-      const response = await fetch(endpoint, {
+      const response = await fetch(getApiUrl(endpoint), {
         method,
         headers: {
           'Content-Type': 'application/json',
@@ -196,7 +197,7 @@ export default function AdminProductsPage() {
     setSuccess('');
 
     try {
-      const response = await fetch(`/api/admin/products/${productId}/generate-image`, {
+      const response = await fetch(getApiUrl(`/api/admin/products/${productId}/generate-image`), {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -233,7 +234,7 @@ export default function AdminProductsPage() {
     setSuccess('');
 
     try {
-      const response = await fetch(`/api/products/${productId}`, {
+      const response = await fetch(getApiUrl(`/api/products/${productId}`), {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

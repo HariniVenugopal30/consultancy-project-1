@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type PortfolioProject = {
   id: string;
@@ -75,7 +76,7 @@ export default function AdminPortfolioPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/portfolio', { cache: 'no-store' });
+      const response = await fetch(getApiUrl('/api/portfolio'), { cache: 'no-store' });
       const data = await response.json();
       if (!response.ok) {
         throw new Error(data?.message ?? 'Unable to load portfolio projects');
@@ -144,7 +145,7 @@ export default function AdminPortfolioPage() {
       const endpoint = isEditing ? `/api/portfolio/${editingProjectId}` : '/api/portfolio';
       const method = isEditing ? 'PATCH' : 'POST';
 
-      const response = await fetch(endpoint, {
+      const response = await fetch(getApiUrl(endpoint), {
         method,
         headers: {
           'Content-Type': 'application/json',
@@ -180,7 +181,7 @@ export default function AdminPortfolioPage() {
     setSuccess('');
 
     try {
-      const response = await fetch(`/api/portfolio/${projectId}`, {
+      const response = await fetch(getApiUrl(`/api/portfolio/${projectId}`), {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AdminOrdersPanel from '@/frontend/components/admin/AdminOrdersPanel';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type Product = {
   id: string;
@@ -92,7 +93,7 @@ export default function AdminDashboardPage() {
 
     const loadProducts = async () => {
       try {
-        const response = await fetch('/api/products', { cache: 'no-store' });
+        const response = await fetch(getApiUrl('/api/products'), { cache: 'no-store' });
         const data = await response.json();
 
         if (!response.ok) {
@@ -114,7 +115,7 @@ export default function AdminDashboardPage() {
 
     const loadOrderCounters = async () => {
       try {
-        const response = await fetch('/api/orders/admin', {
+        const response = await fetch(getApiUrl('/api/orders/admin'), {
           cache: 'no-store',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -216,7 +217,7 @@ export default function AdminDashboardPage() {
     setIsSaving((previous) => ({ ...previous, [productId]: true }));
 
     try {
-      const response = await fetch(`/api/products/${productId}/stock`, {
+      const response = await fetch(getApiUrl(`/api/products/${productId}/stock`), {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

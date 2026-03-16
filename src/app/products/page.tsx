@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedProductCard from '@/frontend/components/AnimatedProductCard';
 import { products as seedProducts } from '@/shared/data/products';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type Product = {
   id: string;
@@ -50,7 +51,7 @@ export default function ProductsPage() {
     const loadProducts = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/products', { cache: 'no-store' });
+        const response = await fetch(getApiUrl('/api/products'), { cache: 'no-store' });
         if (!response.ok) {
           throw new Error('Failed to load products');
         }

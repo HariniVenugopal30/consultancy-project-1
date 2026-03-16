@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
+import { getApiUrl } from '@/frontend/lib/api';
 
 const rupeeFormatter = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -230,7 +231,7 @@ export default function AdminOrdersPanel() {
         throw new Error('Admin session expired. Please login again.');
       }
 
-      const response = await fetch('/api/orders/admin', {
+      const response = await fetch(getApiUrl('/api/orders/admin'), {
         cache: 'no-store',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -256,7 +257,7 @@ export default function AdminOrdersPanel() {
         throw new Error('Admin session expired. Please login again.');
       }
 
-      const response = await fetch('/api/admin/users', {
+      const response = await fetch(getApiUrl('/api/admin/users'), {
         cache: 'no-store',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -276,7 +277,7 @@ export default function AdminOrdersPanel() {
 
   const fetchInventoryProducts = async () => {
     try {
-      const response = await fetch('/api/products', { cache: 'no-store' });
+      const response = await fetch(getApiUrl('/api/products'), { cache: 'no-store' });
       const data = await response.json();
 
       if (!response.ok) {
@@ -357,7 +358,7 @@ export default function AdminOrdersPanel() {
         throw new Error('Price must be non-negative');
       }
 
-      const response = await fetch('/admin/add-offline-order', {
+      const response = await fetch(getApiUrl('/admin/add-offline-order'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -428,7 +429,7 @@ export default function AdminOrdersPanel() {
         }
       }
 
-      const response = await fetch(`/api/orders/${encodeURIComponent(editDraft.orderId)}`, {
+      const response = await fetch(getApiUrl(`/api/orders/${encodeURIComponent(editDraft.orderId)}`), {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -466,7 +467,7 @@ export default function AdminOrdersPanel() {
         throw new Error('Admin session expired. Please login again.');
       }
 
-      const response = await fetch(`/api/orders/${encodeURIComponent(orderId)}`, {
+      const response = await fetch(getApiUrl(`/api/orders/${encodeURIComponent(orderId)}`), {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

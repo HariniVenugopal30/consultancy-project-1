@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { portfolioProjects as seedPortfolioProjects } from '@/shared/data/portfolio';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type PortfolioProject = {
   id: string;
@@ -36,7 +37,7 @@ export default function PortfolioPage() {
     const loadPortfolio = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/portfolio', { cache: 'no-store' });
+        const response = await fetch(getApiUrl('/api/portfolio'), { cache: 'no-store' });
         const data = await response.json();
         if (!response.ok) {
           throw new Error(data?.message ?? 'Unable to load portfolio');

@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { FormEvent, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { FormEvent, useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { getApiUrl } from '@/frontend/lib/api';
 
 type LoginResponse = {
   token: string;
@@ -17,10 +18,25 @@ type LoginResponse = {
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
+  useEffect(() => {
+    const registered = searchParams.get('registered');
+    const registeredEmail = searchParams.get('email');
+
+    if (registeredEmail) {
+      setEmail(registeredEmail);
+    }
+
+    if (registered === '1') {
+      setSuccessMessage('Account created. Log in with your new customer credentials.');
+    }
+  }, [searchParams]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -28,7 +44,7 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(getApiUrl('/api/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -100,6 +116,7 @@ export default function LoginPage() {
               />
             </div>
 
+            {successMessage && <p className="text-sm text-green-700">{successMessage}</p>}
             {error && <p className="text-sm text-red-600">{error}</p>}
 
             <motion.button
