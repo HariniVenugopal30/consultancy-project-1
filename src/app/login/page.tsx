@@ -73,6 +73,7 @@ function LoginContent() {
       const auth = data as LoginResponse;
       localStorage.setItem('authToken', auth.token);
       localStorage.setItem('authUser', JSON.stringify(auth.user));
+      window.dispatchEvent(new Event('auth-changed'));
       if (auth.user.role === 'admin') {
         router.push('/admin');
       } else {

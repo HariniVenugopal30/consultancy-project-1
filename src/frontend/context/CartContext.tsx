@@ -27,6 +27,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CART_STORAGE_PREFIX = 'colorburst_cart';
 const GUEST_CART_KEY = `${CART_STORAGE_PREFIX}_guest`;
+const AUTH_CHANGED_EVENT = 'auth-changed';
 
 type AuthUser = {
   id?: string;
@@ -89,7 +90,7 @@ function loadCartFromStorage(key: string) {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const activeUserId = getAuthUserId();
+  const [activeUserId, setActiveUserId] = useState<string | null>(() => getAuthUserId());
   const [cartsByKey, setCartsByKey] = useState<Record<string, CartItem[]>>(() => {
     const initialUserId = getAuthUserId();
     const initialStorageKey = getCartStorageKey(initialUserId);
@@ -100,6 +101,38 @@ export function CartProvider({ children }: { children: ReactNode }) {
   });
 
   const storageKey = useMemo(() => getCartStorageKey(activeUserId), [activeUserId]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const syncAuthUser = () => {
+      setActiveUserId(getAuthUserId());
+    };
+
+    syncAuthUser();
+    window.addEventListener('storage', syncAuthUser);
+    window.addEventListener(AUTH_CHANGED_EVENT, syncAuthUser);
+
+    return () => {
+      window.removeEventListener('storage', syncAuthUser);
+      window.removeEventListener(AUTH_CHANGED_EVENT, syncAuthUser);
+    };
+  }, []);
+
+  useEffect(() => {
+    setCartsByKey((previousCarts) => {
+      if (previousCarts[storageKey]) {
+        return previousCarts;
+      }
+
+      return {
+        ...previousCarts,
+        [storageKey]: loadCartFromStorage(storageKey),
+      };
+    });
+  }, [storageKey]);
 
   const cart = useMemo(
     () => cartsByKey[storageKey] ?? loadCartFromStorage(storageKey),

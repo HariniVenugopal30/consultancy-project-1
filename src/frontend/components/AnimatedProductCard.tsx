@@ -34,10 +34,7 @@ function AnimatedProductCard({
   const [toastMessage, setToastMessage] = useState('');
   const { addToCart } = useCart();
 
-  // Currency conversion: USD to INR (1 USD = 83 INR)
-  const USD_TO_INR = 83;
-  const priceInINR = price * USD_TO_INR;
-  const subtotal = priceInINR * quantity;
+  const subtotal = price * quantity;
 
   // Stock status
   const isInStock = stock > 0;
@@ -70,7 +67,7 @@ function AnimatedProductCard({
     addToCart({
       id,
       name,
-      price: priceInINR,
+      price,
       quantity,
       category,
       image,
@@ -194,7 +191,7 @@ function AnimatedProductCard({
             >
               ₹{subtotal.toFixed(2)}
             </motion.p>
-            <p className="text-xs text-gray-500">per gallon (₹ INR) • ₹{priceInINR.toFixed(2)} each</p>
+            <p className="text-xs text-gray-500">per gallon (₹ INR) • ₹{price.toFixed(2)} each</p>
           </div>
           <motion.button
             onClick={handleAddToCart}

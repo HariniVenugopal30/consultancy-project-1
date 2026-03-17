@@ -39,15 +39,18 @@ export default function Header() {
 
     syncAuthState();
     window.addEventListener('storage', syncAuthState);
+    window.addEventListener('auth-changed', syncAuthState);
 
     return () => {
       window.removeEventListener('storage', syncAuthState);
+      window.removeEventListener('auth-changed', syncAuthState);
     };
   }, [pathname]);
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem('authUser');
+    window.dispatchEvent(new Event('auth-changed'));
     setIsLoggedIn(false);
     setIsMenuOpen(false);
     router.push('/');
