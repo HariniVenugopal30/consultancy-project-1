@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <div>
-      <Hero 
+      <Hero
         title="Transform Your Spaces with Premium Paint"
         subtitle="ColorBurst provides high-quality paints for residential and commercial projects. Professional results guaranteed."
       />

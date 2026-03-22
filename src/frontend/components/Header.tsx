@@ -6,22 +6,6 @@ import { usePathname, useRouter } from 'next/navigation';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCart } from '@/frontend/context/CartContext';
 
-const prefetchRoutes = [
-  '/',
-  '/about',
-  '/products',
-  '/portfolio',
-  '/contact',
-  '/cart',
-  '/checkout',
-  '/order-confirmation',
-  '/track-order',
-  '/orders',
-  '/login',
-  '/signup',
-  '/paint-calculator',
-  '/wall',
-];
 
 export default function Header() {
   const router = useRouter();
@@ -56,23 +40,6 @@ export default function Header() {
     router.push('/');
   };
 
-  useEffect(() => {
-    const prefetchAll = () => {
-      prefetchRoutes.forEach((route) => router.prefetch(route));
-    };
-
-    if (
-      typeof window !== 'undefined' &&
-      typeof window.requestIdleCallback === 'function' &&
-      typeof window.cancelIdleCallback === 'function'
-    ) {
-      const idleId = window.requestIdleCallback(() => prefetchAll(), { timeout: 1500 });
-      return () => window.cancelIdleCallback(idleId);
-    }
-
-    const timeoutId = setTimeout(prefetchAll, 300);
-    return () => clearTimeout(timeoutId);
-  }, [router]);
 
   return (
     <header className="bg-blue-900 text-white shadow-lg">
@@ -95,6 +62,9 @@ export default function Header() {
             </Link>
             <Link href="/products" className="hover:text-yellow-400 transition">
               Products
+            </Link>
+            <Link href="/color-matcher" className="hover:text-yellow-400 transition">
+              Color Matcher
             </Link>
             <Link href="/portfolio" className="hover:text-yellow-400 transition">
               Portfolio
@@ -156,6 +126,9 @@ export default function Header() {
             </Link>
             <Link href="/products" className="block py-2 hover:text-yellow-400" onClick={() => setIsMenuOpen(false)}>
               Products
+            </Link>
+            <Link href="/color-matcher" className="block py-2 hover:text-yellow-400" onClick={() => setIsMenuOpen(false)}>
+              Color Matcher
             </Link>
             <Link href="/portfolio" className="block py-2 hover:text-yellow-400" onClick={() => setIsMenuOpen(false)}>
               Portfolio

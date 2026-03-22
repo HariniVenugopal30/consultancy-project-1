@@ -101,7 +101,7 @@ export default function ProductsPage() {
     () => new Set(newArrivals.map((product) => product.id)),
     [newArrivals]
   );
-  
+
   const filteredProducts = useMemo(() => {
     const categoryFiltered =
       selectedCategory === 'All'
@@ -243,11 +243,10 @@ export default function ProductsPage() {
                 onClick={() => setSelectedCategory(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  selectedCategory === category
+                className={`px-6 py-2 rounded-full font-semibold transition ${selectedCategory === category
                     ? 'bg-gradient-to-r from-blue-900 to-blue-800 text-white shadow-lg'
                     : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-blue-900 hover:text-blue-900'
-                }`}
+                  }`}
               >
                 {category}
               </motion.button>

@@ -61,7 +61,7 @@ if (process.platform === 'win32') {
 removeStaleLock();
 
 const nextBin = join(process.cwd(), 'node_modules', 'next', 'dist', 'bin', 'next');
-const child = spawn(process.execPath, [nextBin, 'dev', '-p', '3000'], {
+const child = spawn(process.execPath, [nextBin, 'dev', '--webpack', '-p', '3000'], {
 	stdio: 'inherit',
 	env: process.env,
 });

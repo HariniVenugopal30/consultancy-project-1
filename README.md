@@ -45,3 +45,32 @@ npm run seed
 After starting the app, verify API and DB connectivity at:
 
 `http://localhost:3000/api/health`
+
+## Add-on Project Integration
+
+The add-on project (FastAPI Paint Matcher) has been fully integrated into the main `src` directory.
+
+### Run Add-on Backend (FastAPI)
+
+From [src/backend](src/backend):
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+### Connect Admin Paint Mixer to Add-on API
+
+Set this in [.env.local](.env.local):
+
+```env
+NEXT_PUBLIC_COLOR_MATCHER_API_URL=http://127.0.0.1:8000
+```
+
+Then run your main app from [project1](.):
+
+```bash
+npm run dev
+```

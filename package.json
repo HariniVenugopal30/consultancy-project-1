@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node scripts/seed.js",
-    "generate:portfolio-assets": "node scripts/generate-portfolio-assets.mjs"
+    "generate:portfolio-assets": "node scripts/generate-portfolio-assets.mjs",
+    "backend": "cd src/backend && .venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --port 8000"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

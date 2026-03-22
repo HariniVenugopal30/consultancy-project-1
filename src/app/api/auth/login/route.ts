@@ -98,6 +98,17 @@ export async function POST(request: Request) {
       throw new ApiError(400, 'Password must be at least 8 characters long');
     }
 
+    const envAdmin = createOfflineAdminLogin({
+      normalizedEmail,
+      normalizedUsername,
+      usernameAsEmail,
+      password,
+    });
+
+    if (envAdmin) {
+      return NextResponse.json(envAdmin);
+    }
+
     try {
       await connectToDatabase();
 
@@ -133,20 +144,9 @@ export async function POST(request: Request) {
       });
     } catch (error) {
       if (isDatabaseUnavailableError(error)) {
-        const offlineAdmin = createOfflineAdminLogin({
-          normalizedEmail,
-          normalizedUsername,
-          usernameAsEmail,
-          password,
-        });
-
-        if (offlineAdmin) {
-          return NextResponse.json(offlineAdmin);
-        }
-
         throw new ApiError(
           503,
-          'Database is unavailable. Use configured offline admin credentials or restore database connection.'
+          'Database is unavailable.'
         );
       }
 

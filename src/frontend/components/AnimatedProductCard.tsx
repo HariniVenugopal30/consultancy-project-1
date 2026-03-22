@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ShoppingCart, Star, Zap, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 import { useEffect, useState, memo } from 'react';
@@ -89,11 +90,12 @@ function AnimatedProductCard({
       className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:shadow-2xl"
     >
       <div className="relative h-48 overflow-hidden bg-linear-to-br from-blue-100 to-purple-100">
-        <img
+        <Image
           src={image}
           alt={name}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="pointer-events-none absolute inset-0 bg-black/10" />
         {isNew && (
