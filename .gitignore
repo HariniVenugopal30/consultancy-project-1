@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python Backend & Temp files
+__pycache__/
+*.py[cod]
+*.db
+test_db.js
